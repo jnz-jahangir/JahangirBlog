@@ -90,21 +90,21 @@ katex:
 # --------------------------------------
 
 # Favicon（網站圖標）
-favicon: /source/imgs/blog.png
+favicon: /images/blog.png
 
 # Avatar (頭像)
 avatar:
-  img: /source/imgs/head.jpg
+  img: /images/head.jpg
   effect: false
 
 # Disable all banner image
 disable_top_img: false
 
 # The banner image of home page
-index_img: /source/imgs/back.jpg
+index_img: /images/back.jpg
 
 # If the banner of page not setting, it will show the top_img
-default_top_img: /source/imgs/default_top.jpg
+default_top_img: /images/default_top.jpg
 
 # The banner image of archive page
 archive_img:
@@ -148,7 +148,7 @@ error_img:
 error_404:
   enable: true
   subtitle: '页面走丢了'
-  background: /source/imgs/404.png
+  background: /images/404.png
 
 post_meta:
   page: # Home Page
@@ -224,7 +224,7 @@ reward:
 post_edit:
   enable: false
   # url: https://github.com/user-name/repo-name/edit/branch-name/subdirectory-name/
-  # For example: https://github.com/jerryc127/butterfly.js.org/edit/main/source/
+  # For example: https://github.com/jerryc127/butterfly.js.org/edit/main/
   url:
 
 # Related Articles
