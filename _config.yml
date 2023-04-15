@@ -125,5 +125,9 @@ live2d:
     opacity: 1.0
 
 abbrlink:
-    alg: crc16   #算法： crc16(default) and crc32
-    rep: dec     #进制： dec(default) and hex
+  alg: crc16   #算法： crc16(default) and crc32
+  rep: dec     #进制： dec(default) and hex
+
+marked:
+  prependRoot: true
+  postAsset: true

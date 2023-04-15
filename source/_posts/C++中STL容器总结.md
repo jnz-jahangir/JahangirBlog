@@ -1,12 +1,12 @@
 ---
 title: C++中STL容器总结
 tags:
-  - 编程
   - 语言
-catagories: 编程
+  - 数据结构
+catagories: 语言
 abbrlink: 19499
 date: 2023-04-11 21:35:14
-update:
+update: 2023-4-13 17:11:00
 mathjax: true
 ---
 # 前言
@@ -119,7 +119,62 @@ erase(__position);
 ```CPP
 erase(__positionBegin,__positionEnd);
 ```
-即是删除[ __positionBegin,__positionEnd )区间内的元素  
+即是删除[ __positionBegin, __positionEnd )区间内的元素  
 ***注意是左闭右开区间***
 ## 1.3 用途
 ### 1.3.1 使用数组浪费大量空间
+在某些场合，由于无法确定数组成员数量，盲目声明过大的数组容易爆栈，因此选择不定长数组$vector$显然是更明智的选择
+### 1.3.2 使用邻接表存储图
+使用$vector$容器作为载体存储图是一种十分简洁且高效的做法，例如存储如下无向无权图：  
+![](graph1.png)
+```CPP
+#include<iostream>
+#include<vector>
+#define MAXN 10005
+using namespace std;
+int main()
+{
+    int u[5] = { 1,1,2,3,5 };
+    int v[5] = { 2,3,4,5,2 };
+    vector<int> vt[MAXN];
+    for (int i = 0; i < 5; i++)
+    {
+        vt[u[i]].push_back(v[i]);
+        vt[v[i]].push_back(u[i]);
+    }
+}
+```
+假如将上图变为无向有权图，只需自定义一个结构体即可解决问题：
+```CPP
+#include<iostream>
+#include<vector>
+#define MAXN 10005
+using namespace std;
+struct node
+{
+    int to;
+    int w;
+    node(int tot, int ww)
+    {
+        to = tot;
+        w = ww;
+    }
+};
+int main()
+{
+    int u[5] = { 1,1,2,3,5 };
+    int v[5] = { 2,3,4,5,2 };
+    int w[5] = { 1,2,3,4,5 };
+    vector<node> vt[MAXN];
+    for (int i = 0; i < 5; i++)
+    {
+        vt[u[i]].push_back(node(u[i],w[i]));
+        vt[v[i]].push_back(node(v[i],w[i]));
+    }
+}
+```
+# 2 队列 $queue$
+队列应该是我接触到的最早的STL容器了，记得刚开始只是用它写广搜来着  
+## 2.1 特点
+队列，顾名思义，即元素按照一定顺序排成一队。而这个顺序即为元素进入队列的顺序，即先进的元素在前，后进的元素在后。  
+队列有两端，末端只进不出，首端只出不进，遵循“***先进先出***”原则。
