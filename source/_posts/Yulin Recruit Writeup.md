@@ -4,9 +4,10 @@ tags:
   - CTF
   - Writeup
 catagories: CTF
+mathjax: true
+abbrlink: 8386
 date: 2023-10-28 20:56:00
 update: 2023-10-28 20:56:00
-mathjax: true
 ---
 
 # [Baby]†签到†
